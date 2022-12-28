@@ -1,0 +1,35 @@
+{
+  "name": "chat-app-sentiment-analysis",
+  "version": "1.0.0",
+  "description": "A realtime Chat App With Sentiment Analysis Using Next.js and Pusher",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": " node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "next": "^8.0.1",
+    "pusher": "^2.2.0",
+    "pusher-js": "^4.3.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "sentiment": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanochoa/chat-app-sentiment-analysis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yanochoa/chat-app-sentiment-analysis/issues"
+  },
+  "homepage": "https://github.com/yanochoa/chat-app-sentiment-analysis#readme"
+}
