@@ -43,7 +43,7 @@ class Chat extends Component {
     */
 
     this.pusher.connection.bind("connected", () => {
-      axios.post("/messages").then(response => {
+      axios.post("https://chat-woad.vercel.app/messages").then(response => {
         const chats = response.data.messages;
         this.setState({ chats });
       });
