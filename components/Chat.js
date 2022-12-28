@@ -62,7 +62,7 @@ class Chat extends Component {
       const chat = { user, message: value, timestamp: +new Date() };
 
       evt.target.value = "";
-      axios.post("/message", chat);
+      axios.post("https://chat-woad.vercel.app/messages/message", chat);
     }
   };
 
