@@ -4,9 +4,9 @@
   "description": "A realtime Chat App With Sentiment Analysis Using Next.js and Pusher",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
-    "build": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next build",
-    "start": "cross-env NODE_OPTIONS='--openssl-legacy-provider' node server.js"
+    "dev": " next dev",
+    "build": " next build",
+    "start": " node server.js"
   },
   "keywords": [],
   "author": "",
