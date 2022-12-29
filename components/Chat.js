@@ -45,7 +45,7 @@ class Chat extends Component {
     */
 
     this.pusher.connection.bind("connected", async() => {
-     await axios.post("/messages").then(response => {
+     await axios.post("https://chat-opal-nu.vercel.app/messages").then(response => {
         const chats = response.data.messages;
         this.setState({ chats });
       });
@@ -64,7 +64,7 @@ class Chat extends Component {
       const chat = { user, message: value, timestamp: +new Date() };
 
       evt.target.value = "";
-    await  axios.post("/message", chat);
+    await  axios.post("https://chat-opal-nu.vercel.app/message", chat);
     }
   };
 
