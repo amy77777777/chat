@@ -3,6 +3,8 @@ import axios from "axios";
 import Pusher from "pusher-js";
 import ChatMessage from "./ChatMessage";
 
+const instance = axios.create();
+
 const SAD_EMOJI = [55357, 56864];
 const HAPPY_EMOJI = [55357, 56832];
 const NEUTRAL_EMOJI = [55357, 56848];
@@ -45,7 +47,7 @@ class Chat extends Component {
     */
 
     this.pusher.connection.bind("connected", async() => {
-     await axios.post("/messages").then(response => {
+     await instance.post("/messages").then(response => {
         const chats = response.data.messages;
         this.setState({ chats });
       });
@@ -64,7 +66,7 @@ class Chat extends Component {
       const chat = { user, message: value, timestamp: +new Date() };
 
       evt.target.value = "";
-    await  axios.post("/message", chat);
+    await  instance.post("/message", chat);
     }
   };
 
