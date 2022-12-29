@@ -20,6 +20,8 @@ class Chat extends Component {
   // cluster = "ap2"
 
 
+  
+
   componentDidMount() {
     this.pusher = new Pusher("bf188a6ee9a688df99c2", {
       cluster: "ap2",
@@ -42,8 +44,8 @@ class Chat extends Component {
      Afterwards, I populate the state chats property with the chat messages received in the response.
     */
 
-    this.pusher.connection.bind("connected", () => {
-      axios.post("/messages").then(response => {
+    this.pusher.connection.bind("connected", async() => {
+     await axios.post("/messages").then(response => {
         const chats = response.data.messages;
         this.setState({ chats });
       });
@@ -54,7 +56,7 @@ class Chat extends Component {
     this.pusher.disconnect();
   }
 
-  handleKeyUp = evt => {
+  handleKeyUp = async(evt) => {
     const value = evt.target.value;
 
     if (evt.keyCode === 13 && !evt.shiftKey) {
@@ -62,7 +64,7 @@ class Chat extends Component {
       const chat = { user, message: value, timestamp: +new Date() };
 
       evt.target.value = "";
-      axios.post("/message", chat);
+    await  axios.post("/message", chat);
     }
   };
 
